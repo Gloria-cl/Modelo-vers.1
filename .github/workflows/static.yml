@@ -20,16 +20,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Build React app
-        run: npm run build
+      - name: Create build directory
+        run: |
+          mkdir -p build
+          cp *.html build/ 2>/dev/null || true
+          cp *.js build/ 2>/dev/null || true
+          cp *.css build/ 2>/dev/null || true
+          cp *.json build/ 2>/dev/null || true
+          ls -la build/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
