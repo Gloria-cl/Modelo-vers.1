@@ -2,96 +2,298 @@ import React, { useState, useMemo } from "react";
 
 export default function App() {
   const dataPorCuadrante = {
-    Diseño: [
-      { nombre: "Funcionalidad", valor: 3.0, angulo: 10, id: "funcionalidad" },
-      {
-        nombre: "Integración Urbana",
-        valor: 2.0,
-        angulo: 20,
-        id: "integracion_urbana",
-      },
-      { nombre: "Innovación", valor: 2.2, angulo: 30, id: "innovacion" },
-      { nombre: "Inclusión", valor: 2.1, angulo: 45, id: "inclusion" },
-      { nombre: "Accesibilidad", valor: 2.0, angulo: 60, id: "accesibilidad" },
-      { nombre: "Confort", valor: 2.7, angulo: 75, id: "confort" },
-      { nombre: "Imagen", valor: 2.5, angulo: 85, id: "imagen" },
-    ],
-    Construcción: [
-      {
-        nombre: "Sostenibilidad Ambiental",
-        valor: 2.6,
-        angulo: 100,
-        id: "sostenibilidad_ambiental",
-      },
-      {
-        nombre: "Cohesión Social",
-        valor: 3.0,
-        angulo: 115,
-        id: "cohesion_social",
-      },
-      {
-        nombre: "Movilidad Sostenible",
-        valor: 2.5,
-        angulo: 130,
-        id: "movilidad_sostenible",
-      },
-      {
-        nombre: "Materiales Ecológicos",
-        valor: 2.3,
-        angulo: 150,
-        id: "materiales_ecologicos",
-      },
-      {
-        nombre: "Eficiencia Energética",
-        valor: 2.5,
-        angulo: 170,
-        id: "eficiencia_energetica",
-      },
-    ],
-    Gestión: [
-      { nombre: "Mantenimiento", valor: 2.5, angulo: 195, id: "mantenimiento" },
-      { nombre: "Planificación", valor: 3.0, angulo: 210, id: "planificacion" },
-      {
-        nombre: "Gestión Operativa",
-        valor: 2.6,
-        angulo: 225,
-        id: "gestion_operativa",
-      },
-      {
-        nombre: "Comunicación y Difusión",
-        valor: 2.3,
-        angulo: 240,
-        id: "comunicacion_difusion",
-      },
-      {
-        nombre: "Monitoreo y Evaluación",
-        valor: 3.0,
-        angulo: 255,
-        id: "monitoreo_evaluacion",
-      },
-    ],
-    Rehabilitación: [
-      { nombre: "Cultura", valor: 2.6, angulo: 285, id: "cultura" },
-      { nombre: "Identidad", valor: 1.7, angulo: 300, id: "identidad" },
-      {
-        nombre: "Participación Ciudadana",
-        valor: 2.7,
-        angulo: 315,
-        id: "participacion_ciudadana",
-      },
-      {
-        nombre: "Responsabilidad Social",
-        valor: 2.8,
-        angulo: 330,
-        id: "responsabilidad_social",
-      },
-      {
-        nombre: "Impacto Económico",
-        valor: 1.6,
-        angulo: 345,
-        id: "impacto_economico",
-      },
-    ],
+    Diseño: {
+      Funcionalidad: [
+        { nombre: "Acceso a avenidas", valor: 3, id: "acceso_avenidas" },
+        { nombre: "Caminable", valor: 3, id: "caminable" },
+        {
+          nombre: "Uso de transporte público",
+          valor: 3,
+          id: "transporte_publico",
+        },
+        { nombre: "Seguridad", valor: 3, id: "seguridad" },
+        { nombre: "Iluminación", valor: 3, id: "iluminacion" },
+        {
+          nombre: "Protección climática",
+          valor: 2,
+          id: "proteccion_climatica",
+        },
+        { nombre: "Mobiliario Urbano", valor: 3, id: "mobiliario_urbano" },
+      ],
+      "Integración Urbana": [
+        { nombre: "Equipamiento", valor: 2, id: "equipamiento" },
+        { nombre: "Estacionamiento", valor: 1, id: "estacionamiento" },
+        { nombre: "Comercio Aledaño", valor: 2, id: "comercio_aledano" },
+        { nombre: "Impacto en el área", valor: 3, id: "impacto_area" },
+      ],
+      Innovación: [
+        {
+          nombre: "Espacios multifuncionales",
+          valor: 3,
+          id: "espacios_multifuncionales",
+        },
+        { nombre: "Elementos naturales", valor: 2, id: "elementos_naturales" },
+        { nombre: "Tecnología", valor: 1, id: "tecnologia" },
+        { nombre: "Elementos lúdicos", valor: 3, id: "elementos_ludicos" },
+      ],
+      Inclusión: [
+        { nombre: "Programas sociales", valor: 2, id: "programas_sociales" },
+        { nombre: "Talleres", valor: 1, id: "talleres" },
+        {
+          nombre: "Diversidad actividades",
+          valor: 3,
+          id: "diversidad_actividades",
+        },
+        { nombre: "Adaptación para NE", valor: 3, id: "adaptacion_ne" },
+        {
+          nombre: "Saberes tradicionales",
+          valor: 2,
+          id: "saberes_tradicionales",
+        },
+        {
+          nombre: "Capacitación laboral",
+          valor: 1,
+          id: "capacitacion_laboral",
+        },
+        { nombre: "Equipamiento para NE", valor: 3, id: "equipamiento_ne" },
+        {
+          nombre: "Eventos comunitarios",
+          valor: 2,
+          id: "eventos_comunitarios",
+        },
+      ],
+      Accesibilidad: [
+        { nombre: "Vehicular", valor: 1, id: "vehicular" },
+        { nombre: "Peatonal", valor: 3, id: "peatonal" },
+        { nombre: "Bicicleta", valor: 1, id: "bicicleta" },
+        { nombre: "Accesibilidad para NE", valor: 3, id: "accesibilidad_ne" },
+      ],
+      Confort: [
+        { nombre: "Térmico", valor: 3, id: "termico" },
+        { nombre: "Acústico", valor: 2, id: "acustico" },
+        { nombre: "Lumínico", valor: 3, id: "luminico" },
+        { nombre: "Visual (limpieza)", valor: 3, id: "visual_limpieza" },
+      ],
+      Imagen: [
+        {
+          nombre: "Elementos distintivos",
+          valor: 2,
+          id: "elementos_distintivos",
+        },
+        { nombre: "Áreas verdes", valor: 3, id: "areas_verdes_imagen" },
+      ],
+    },
+    Construcción: {
+      "Sostenibilidad Ambiental": [
+        {
+          nombre: "Áreas verdes (mitigación de isla de calor)",
+          valor: 3,
+          id: "areas_verdes_calor",
+        },
+        { nombre: "Especies nativas", valor: 3, id: "especies_nativas" },
+        { nombre: "Métodos orgánicos", valor: 2, id: "metodos_organicos" },
+        {
+          nombre: "Conservación biodiversidad",
+          valor: 3,
+          id: "conservacion_biodiversidad",
+        },
+        { nombre: "Topografía natural", valor: 2, id: "topografia_natural" },
+      ],
+      "Cohesión Social": [
+        {
+          nombre: "Elementos interacción",
+          valor: 3,
+          id: "elementos_interaccion",
+        },
+        { nombre: "Uso grupos diversos", valor: 3, id: "diferentes_grupos" },
+      ],
+      "Movilidad Sostenible": [
+        {
+          nombre: "Infraestructura bicicletas",
+          valor: 2,
+          id: "infraestructura_bicicletas",
+        },
+        {
+          nombre: "Conectividad transporte",
+          valor: 3,
+          id: "conectividad_transporte",
+        },
+      ],
+      "Materiales Ecológicos": [
+        { nombre: "Materiales locales", valor: 2, id: "materiales_locales" },
+        {
+          nombre: "Materiales reciclados",
+          valor: 2,
+          id: "materiales_reciclados",
+        },
+        {
+          nombre: "Bajo impacto ambiental",
+          valor: 3,
+          id: "bajo_impacto_ambiental",
+        },
+      ],
+      "Eficiencia Energética": [
+        { nombre: "Iluminación LED", valor: 3, id: "iluminacion_led" },
+        { nombre: "Energías renovables", valor: 2, id: "energias_renovables" },
+      ],
+    },
+    Gestión: {
+      Mantenimiento: [
+        {
+          nombre: "Personal mantenimiento",
+          valor: 3,
+          id: "personal_mantenimiento",
+        },
+        {
+          nombre: "Mobiliario Urbano",
+          valor: 2,
+          id: "mobiliario_mantenimiento",
+        },
+        {
+          nombre: "Instalaciones",
+          valor: 2,
+          id: "instalaciones_mantenimiento",
+        },
+        { nombre: "Equipamiento", valor: 2, id: "equipamiento_mantenimiento" },
+        { nombre: "Áreas verdes", valor: 3, id: "areas_verdes_mantenimiento" },
+      ],
+      Planificación: [
+        { nombre: "Plan mantenimiento", valor: 3, id: "plan_mantenimiento" },
+        { nombre: "Gestión residuos", valor: 3, id: "gestion_residuos" },
+        { nombre: "Gestión del agua", valor: 3, id: "gestion_agua" },
+      ],
+      "Gestión Operativa": [
+        { nombre: "Sistema vigilancia", valor: 3, id: "vigilancia_monitoreo" },
+        {
+          nombre: "Roles responsabilidades",
+          valor: 3,
+          id: "roles_responsabilidades",
+        },
+        {
+          nombre: "Estructura organizativa",
+          valor: 2,
+          id: "estructura_organizativa",
+        },
+      ],
+      "Comunicación y Difusión": [
+        {
+          nombre: "Sistemas de información",
+          valor: 2,
+          id: "sistemas_informacion",
+        },
+        {
+          nombre: "Canales comunicación",
+          valor: 3,
+          id: "canales_comunicacion",
+        },
+        {
+          nombre: "Difusión actividades",
+          valor: 2,
+          id: "difusion_actividades",
+        },
+      ],
+      "Monitoreo y Evaluación": [
+        {
+          nombre: "Flexibilidad ante cambios",
+          valor: 3,
+          id: "flexibilidad_cambios",
+        },
+        {
+          nombre: "Evaluación satisfacción",
+          valor: 3,
+          id: "evaluacion_satisfaccion",
+        },
+      ],
+    },
+    Rehabilitación: {
+      Cultura: [
+        {
+          nombre: "Actividades culturales",
+          valor: 3,
+          id: "actividades_culturales",
+        },
+        {
+          nombre: "Diversidad disciplinas",
+          valor: 2,
+          id: "disciplinas_artisticas",
+        },
+        {
+          nombre: "Accesibilidad económica",
+          valor: 3,
+          id: "accesibilidad_economica",
+        },
+        { nombre: "Diversidad horarios", valor: 2, id: "diversidad_horarios" },
+        {
+          nombre: "Iniciativas ciudadanas",
+          valor: 3,
+          id: "iniciativas_culturales",
+        },
+        {
+          nombre: "Vínculos comunitarios",
+          valor: 3,
+          id: "vinculos_comunitarios",
+        },
+      ],
+      Identidad: [
+        {
+          nombre: "Símbolos representativos",
+          valor: 2,
+          id: "simbolos_representativos",
+        },
+        { nombre: "Rituales locales", valor: 2, id: "rituales_locales" },
+        { nombre: "Toponimia cultural", valor: 1, id: "toponimia_cultural" },
+        { nombre: "Narrativa del lugar", valor: 2, id: "narrativa_lugar" },
+      ],
+      "Participación Ciudadana": [
+        {
+          nombre: "Programas convivencias",
+          valor: 2,
+          id: "programas_convivencias",
+        },
+        {
+          nombre: "Actividades comunitarias",
+          valor: 3,
+          id: "actividades_comunitarias",
+        },
+        { nombre: "Cuidado comunitario", valor: 3, id: "cuidado_comunitario" },
+        { nombre: "Consultas comunidad", valor: 3, id: "consultas_comunidad" },
+      ],
+      "Responsabilidad Social": [
+        {
+          nombre: "Programas grupos vulnerables",
+          valor: 3,
+          id: "programas_vulnerables",
+        },
+        {
+          nombre: "Flexibilidad ante cambios",
+          valor: 3,
+          id: "flexibilidad_social",
+        },
+        {
+          nombre: "Espacios actividad física",
+          valor: 3,
+          id: "espacios_actividad_fisica",
+        },
+        { nombre: "Promoción salud", valor: 3, id: "promocion_salud" },
+        { nombre: "Educación ambiental", valor: 2, id: "educacion_ambiental" },
+      ],
+      "Impacto Económico": [
+        { nombre: "Generación empleo", valor: 2, id: "generacion_empleo" },
+        { nombre: "Incremento negocios", valor: 2, id: "incremento_negocios" },
+        { nombre: "Turismo", valor: 1, id: "turismo" },
+        {
+          nombre: "Ingresos actividades culturales",
+          valor: 2,
+          id: "ingresos_culturales",
+        },
+        {
+          nombre: "Ingresos actividades sociales",
+          valor: 2,
+          id: "ingresos_sociales",
+        },
+        { nombre: "Renta espacios", valor: 1, id: "renta_espacios" },
+      ],
+    },
   };
 
   const coloresCuadrante = {
@@ -101,48 +303,88 @@ export default function App() {
     Rehabilitación: "#5cd6d6",
   };
 
+  const coloresCuadranteIntensos = {
+    Diseño: "#a855f7",
+    Construcción: "#84cc16",
+    Gestión: "#3b82f6",
+    Rehabilitación: "#06b6d4",
+  };
+
   const [cuadranteSeleccionado, setCuadranteSeleccionado] = useState("todos");
   const [puntoHover, setPuntoHover] = useState(null);
   const [modoVisualizacion, setModoVisualizacion] = useState("ideal");
 
+  const promediosPorCategoria = {
+    // Diseño (7 categorías)
+    Funcionalidad: 2.8,
+    "Integración Urbana": 2.0,
+    Innovación: 2.2,
+    Inclusión: 2.1,
+    Accesibilidad: 2.0,
+    Confort: 2.7,
+    Imagen: 2.5,
+    // Construcción (5 categorías)
+    "Sostenibilidad Ambiental": 2.6,
+    "Cohesión Social": 3.0,
+    "Movilidad Sostenible": 2.5,
+    "Materiales Ecológicos": 2.3,
+    "Eficiencia Energética": 2.5,
+    // Gestión (5 categorías)
+    Mantenimiento: 2.5,
+    Planificación: 3.0,
+    "Gestión Operativa": 2.6,
+    "Comunicación y Difusión": 2.3,
+    "Monitoreo y Evaluación": 3.0,
+    // Rehabilitación (5 categorías)
+    Cultura: 2.6,
+    Identidad: 1.7,
+    "Participación Ciudadana": 2.7,
+    "Responsabilidad Social": 2.8,
+    "Impacto Económico": 1.6,
+  };
+
   const [indicadoresActuales, setIndicadoresActuales] = useState(() => {
     const inicial = {};
-    Object.values(dataPorCuadrante)
-      .flat()
-      .forEach((item) => {
-        inicial[item.id] = false;
+    Object.values(dataPorCuadrante).forEach((cuadrante) => {
+      Object.values(cuadrante).forEach((categoria) => {
+        categoria.forEach((item) => {
+          inicial[item.id] = false;
+        });
       });
+    });
     return inicial;
   });
 
-  const toggleIndicador = (indicadorId) =>
+  const toggleIndicador = (indicadorId) => {
     setIndicadoresActuales((prev) => ({
       ...prev,
       [indicadorId]: !prev[indicadorId],
     }));
+  };
 
   const estadisticas = useMemo(() => {
     const totalIndicadores = Object.keys(indicadoresActuales).length;
     const indicadoresPresentes =
       Object.values(indicadoresActuales).filter(Boolean).length;
-    const porcentajeExito = Math.round(
+    const porcentajeExito = totalIndicadores > 0 ? Math.round(
       (indicadoresPresentes / totalIndicadores) * 100
-    );
+    ) : 0;
 
     const estadisticasPorCuadrante = {};
-    Object.entries(dataPorCuadrante).forEach(([cuadrante, items]) => {
-      const totalCuadrante = items.length;
-      const presentesCuadrante = items.filter(
+    Object.entries(dataPorCuadrante).forEach(([cuadrante, categorias]) => {
+      const todosItems = Object.values(categorias).flat();
+      const totalCuadrante = todosItems.length;
+      const presentesCuadrante = todosItems.filter(
         (item) => indicadoresActuales[item.id]
       ).length;
-      const porcentajeCuadrante = Math.round(
+      const porcentajeCuadrante = totalCuadrante > 0 ? Math.round(
         (presentesCuadrante / totalCuadrante) * 100
-      );
+      ) : 0;
+
       estadisticasPorCuadrante[cuadrante] = {
         total: totalCuadrante,
         presentes: presentesCuadrante,
         porcentaje: porcentajeCuadrante,
-        faltantes: items.filter((item) => !indicadoresActuales[item.id]),
       };
     });
 
@@ -152,253 +394,163 @@ export default function App() {
       porcentaje: porcentajeExito,
       porCuadrante: estadisticasPorCuadrante,
     };
-  }, [indicadoresActuales]);
+  }, [indicadoresActuales, dataPorCuadrante]);
 
-  const categorizarFaltantes = useMemo(() => {
-    const todasLasFaltantes = Object.entries(estadisticas.porCuadrante).flatMap(
-      ([cuadrante, stats]) =>
-        stats.faltantes.map((item) => ({ ...item, cuadrante }))
-    );
-    const esenciales = todasLasFaltantes.filter((item) => item.valor === 3.0);
-    const importantes = todasLasFaltantes.filter(
-      (item) => item.valor >= 2.0 && item.valor <= 2.9
-    );
-    const complementarios = todasLasFaltantes.filter(
-      (item) => item.valor >= 1.0 && item.valor <= 1.9
-    );
-    return { esenciales, importantes, complementarios };
-  }, [estadisticas]);
+  const indicadoresFaltantes = useMemo(() => {
+    const faltantes = {
+      Diseño: [],
+      Construcción: [],
+      Gestión: [],
+      Rehabilitación: [],
+    };
 
-  const dividirTexto = (texto, maxCaracteres = 16) => {
-    if (texto.length <= maxCaracteres) return [texto];
-    const palabras = texto.split(" ");
-    const lineas = [];
-    let lineaActual = "";
-    palabras.forEach((palabra) => {
-      if (
-        (lineaActual + " " + palabra).length <= maxCaracteres ||
-        lineaActual === ""
-      ) {
-        lineaActual += (lineaActual ? " " : "") + palabra;
-      } else {
-        if (lineaActual) lineas.push(lineaActual);
-        lineaActual = palabra;
-      }
-    });
-    if (lineaActual) lineas.push(lineaActual);
-    if (lineas.length > 3) return [lineas[0], lineas[1], lineas[2] + "..."];
-    return lineas;
-  };
-
-  const crearPuntosRadar = (cuadrante) => {
-    const puntos = [];
-    const centroX = 450,
-      centroY = 450,
-      radioMax = 340;
-    const datos = dataPorCuadrante[cuadrante];
-    const anguloIncremento = 360 / datos.length;
-
-    datos.forEach((item, indiceItem) => {
-      const anguloRadar = indiceItem * anguloIncremento;
-      const anguloRad = ((anguloRadar - 90) * Math.PI) / 180;
-      let valorMostrar =
-        modoVisualizacion === "actual"
-          ? indicadoresActuales[item.id]
-            ? item.valor
-            : 0
-          : item.valor;
-      const radio = (valorMostrar / 3) * radioMax;
-      const x = centroX + Math.cos(anguloRad) * radio;
-      const y = centroY + Math.sin(anguloRad) * radio;
-      puntos.push({
-        x,
-        y,
-        nombre: item.nombre,
-        valor: valorMostrar,
-        valorOriginal: item.valor,
-        cuadrante,
-        color: coloresCuadrante[cuadrante],
-        angulo: anguloRadar,
-        radio,
-        id: `${cuadrante}-${indiceItem}`,
-        tipo: "radar",
-        indicadorId: item.id,
-        presente: indicadoresActuales[item.id],
-      });
-    });
-    return puntos;
-  };
-
-  const crearPuntosHibrido = () => {
-    const puntos = [];
-    const centroX = 450,
-      centroY = 450,
-      radioMax = 340;
-    Object.entries(dataPorCuadrante).forEach(([cuadrante, datos]) => {
-      datos.forEach((item, indiceItem) => {
-        const anguloRad = ((item.angulo - 90) * Math.PI) / 180;
-        let valorMostrar =
-          modoVisualizacion === "actual"
-            ? indicadoresActuales[item.id]
-              ? item.valor
-              : 0
-            : item.valor;
-        const radio = (valorMostrar / 3) * radioMax;
-        const x = centroX + Math.cos(anguloRad) * radio;
-        const y = centroY + Math.sin(anguloRad) * radio;
-        puntos.push({
-          x,
-          y,
-          nombre: item.nombre,
-          valor: valorMostrar,
-          valorOriginal: item.valor,
-          cuadrante,
-          color: coloresCuadrante[cuadrante],
-          angulo: item.angulo,
-          radio,
-          id: `${cuadrante}-${indiceItem}`,
-          tipo: "hibrido",
-          indicadorId: item.id,
-          presente: indicadoresActuales[item.id],
-        });
-      });
-    });
-    return puntos;
-  };
-
-  const crearPoligonosHibrido = () => {
-    const puntos = crearPuntosHibrido();
-    const poligonosPorCuadrante = {};
-    Object.keys(coloresCuadrante).forEach((cuadrante) => {
-      const puntosCuadrante = puntos.filter((p) => p.cuadrante === cuadrante);
-      if (puntosCuadrante.length > 0) {
-        const coordenadas = puntosCuadrante
-          .map((p) => `${p.x},${p.y}`)
-          .join(" ");
-        poligonosPorCuadrante[cuadrante] = coordenadas;
-      }
-    });
-    return poligonosPorCuadrante;
-  };
-
-  const crearLineasRadialesHibrido = () => {
-    const lineas = [];
-    const centroX = 450,
-      centroY = 450;
-    Object.entries(dataPorCuadrante).forEach(([cuadrante, datos]) => {
-      datos.forEach((item) => {
-        const anguloRad = ((item.angulo - 90) * Math.PI) / 180;
-        const x2 = centroX + Math.cos(anguloRad) * 360;
-        const y2 = centroY + Math.sin(anguloRad) * 360;
-        lineas.push({
-          x1: centroX,
-          y1: centroY,
-          x2,
-          y2,
-          angulo: item.angulo,
-          nombre: item.nombre,
-        });
-      });
-    });
-    return lineas;
-  };
-
-  const crearPoligono = (cuadrante) => {
-    const puntos = crearPuntosRadar(cuadrante);
-    const coordenadas = puntos.map((p) => `${p.x},${p.y}`);
-    if (puntos.length > 0) coordenadas.push(`${puntos[0].x},${puntos[0].y}`);
-    return coordenadas.join(" ");
-  };
-
-  const crearLineasRadiales = (cuadrante) => {
-    const lineas = [];
-    const centroX = 450,
-      centroY = 450;
-    const datos = dataPorCuadrante[cuadrante];
-    const anguloIncremento = 360 / datos.length;
-    datos.forEach((item, indiceItem) => {
-      const anguloRadar = indiceItem * anguloIncremento;
-      const anguloRad = ((anguloRadar - 90) * Math.PI) / 180;
-      const x2 = centroX + Math.cos(anguloRad) * 360;
-      const y2 = centroY + Math.sin(anguloRad) * 360;
-      lineas.push({
-        x1: centroX,
-        y1: centroY,
-        x2,
-        y2,
-        angulo: anguloRadar,
-        nombre: item.nombre,
-      });
-    });
-    return lineas;
-  };
-
-  const crearEspiralReferencia = () => {
-    const puntosEspiral = [];
-    const centroX = 450,
-      centroY = 450,
-      vueltas = 2.2;
-    for (let i = 0; i <= 360 * vueltas; i += 3) {
-      const anguloRad = ((i - 90) * Math.PI) / 180;
-      const radio = 90 + (i / (360 * vueltas)) * 320;
-      const x = centroX + Math.cos(anguloRad) * radio;
-      const y = centroY + Math.sin(anguloRad) * radio;
-      puntosEspiral.push({ x, y });
-    }
-    return puntosEspiral;
-  };
-
-  let puntosMostrar = [],
-    lineasMostrar = [],
-    poligonoMostrar = "",
-    poligonosHibrido = {},
-    mostrarEspiral = false;
-
-  if (cuadranteSeleccionado === "todos") {
-    puntosMostrar = crearPuntosHibrido();
-    lineasMostrar = crearLineasRadialesHibrido();
-    poligonosHibrido = crearPoligonosHibrido();
-    mostrarEspiral = true;
-  } else {
-    puntosMostrar = crearPuntosRadar(cuadranteSeleccionado);
-    lineasMostrar = crearLineasRadiales(cuadranteSeleccionado);
-    poligonoMostrar = crearPoligono(cuadranteSeleccionado);
-  }
-
-  const crearPoligonosDesdeCentro = () => {
-    const centroX = 450,
-      centroY = 450;
-    const poligonosConCentro = {};
-
-    // SOLO crear polígonos desde el centro para la vista "todos"
-    if (cuadranteSeleccionado === "todos") {
-      Object.keys(coloresCuadrante).forEach((cuadrante) => {
-        const puntosCuadrante = puntosMostrar.filter(
-          (p) => p.cuadrante === cuadrante
-        );
-        if (puntosCuadrante.length > 0) {
-          const triangulos = [];
-          for (let i = 0; i < puntosCuadrante.length; i++) {
-            const puntoActual = puntosCuadrante[i];
-            const siguientePunto =
-              puntosCuadrante[(i + 1) % puntosCuadrante.length];
-            if (i < puntosCuadrante.length - 1) {
-              triangulos.push(
-                `${centroX},${centroY} ${puntoActual.x},${puntoActual.y} ${siguientePunto.x},${siguientePunto.y}`
-              );
-            }
+    Object.entries(dataPorCuadrante).forEach(([cuadrante, categorias]) => {
+      Object.entries(categorias).forEach(([categoria, items]) => {
+        items.forEach((item) => {
+          if (!indicadoresActuales[item.id]) {
+            faltantes[cuadrante].push({ categoria, nombre: item.nombre });
           }
-          poligonosConCentro[cuadrante] = triangulos;
-        }
+        });
       });
-    }
-    // NO crear triángulos para vistas individuales
+    });
 
-    return poligonosConCentro;
-  };
+    return faltantes;
+  }, [indicadoresActuales, dataPorCuadrante]);
 
-  const poligonosConCentro = crearPoligonosDesdeCentro();
-  const espiralReferencia = crearEspiralReferencia();
+  const elementos = useMemo(() => {
+    const elementos = [];
+    const promediosCategoriaData = [];
+    const promediosCategoriaIdealData = [];
+    const centroX = 650;
+    const centroY = 650;
+    const radioMax = 350;
+    const radioTexto = 470;
+
+    const angulosCuadrante = {
+      Diseño: { inicio: 0, fin: 90 },
+      Construcción: { inicio: 90, fin: 180 },
+      Gestión: { inicio: 180, fin: 270 },
+      Rehabilitación: { inicio: 270, fin: 360 },
+    };
+
+    Object.entries(dataPorCuadrante).forEach(([cuadrante, categorias]) => {
+      if (
+        cuadranteSeleccionado !== "todos" &&
+        cuadrante !== cuadranteSeleccionado
+      ) {
+        return;
+      }
+
+      const rangoAngulo = angulosCuadrante[cuadrante];
+      const categoriaKeys = Object.keys(categorias);
+      const anguloCategoria =
+        (rangoAngulo.fin - rangoAngulo.inicio) / categoriaKeys.length;
+
+      Object.entries(categorias).forEach(
+        ([categoria, items], categoriaIndex) => {
+          const anguloBaseCategoria =
+            rangoAngulo.inicio + categoriaIndex * anguloCategoria;
+          const anguloIndicador = anguloCategoria / (items.length + 1);
+
+          let promedioCategoriaValor;
+          if (modoVisualizacion === "actual") {
+            const sumaValores = items.reduce((suma, item) => {
+              const valorItem = indicadoresActuales[item.id] ? item.valor : 0;
+              return suma + valorItem;
+            }, 0);
+            promedioCategoriaValor =
+              items.length > 0 ? sumaValores / items.length : 0;
+          } else {
+            promedioCategoriaValor = promediosPorCategoria[categoria] || 0;
+          }
+
+          const promedioCategoriaIdealValor = promediosPorCategoria[categoria] || 0;
+
+          const anguloPromedioCategoria =
+            anguloBaseCategoria + anguloCategoria / 2;
+          const anguloPromedioRad =
+            ((anguloPromedioCategoria - 90) * Math.PI) / 180;
+
+          const radioPromedio = (promedioCategoriaValor / 3) * radioMax;
+          const xPromedio =
+            centroX + Math.cos(anguloPromedioRad) * radioPromedio;
+          const yPromedio =
+            centroY + Math.sin(anguloPromedioRad) * radioPromedio;
+
+          promediosCategoriaData.push({
+            x: xPromedio,
+            y: yPromedio,
+            categoria,
+            cuadrante,
+            promedio: promedioCategoriaValor,
+            angulo: anguloPromedioCategoria,
+            color: coloresCuadrante[cuadrante],
+          });
+
+          const radioPromedioIdeal = (promedioCategoriaIdealValor / 3) * radioMax;
+          const xPromedioIdeal =
+            centroX + Math.cos(anguloPromedioRad) * radioPromedioIdeal;
+          const yPromedioIdeal =
+            centroY + Math.sin(anguloPromedioRad) * radioPromedioIdeal;
+
+          promediosCategoriaIdealData.push({
+            x: xPromedioIdeal,
+            y: yPromedioIdeal,
+            categoria,
+            cuadrante,
+            promedio: promedioCategoriaIdealValor,
+            angulo: anguloPromedioCategoria,
+            color: coloresCuadrante[cuadrante],
+          });
+
+          items.forEach((item, itemIndex) => {
+            const anguloItem =
+              anguloBaseCategoria + (itemIndex + 1) * anguloIndicador;
+            const anguloItemRad = ((anguloItem - 90) * Math.PI) / 180;
+
+            let valorItem =
+              modoVisualizacion === "actual"
+                ? indicadoresActuales[item.id]
+                  ? item.valor
+                  : 0
+                : item.valor;
+
+            const radioItem = (valorItem / 3) * radioMax;
+            const xItem = centroX + Math.cos(anguloItemRad) * radioItem;
+            const yItem = centroY + Math.sin(anguloItemRad) * radioItem;
+
+            const xTexto = centroX + Math.cos(anguloItemRad) * radioTexto;
+            const yTexto = centroY + Math.sin(anguloItemRad) * radioTexto;
+
+            elementos.push({
+              x: xItem,
+              y: yItem,
+              xTexto,
+              yTexto,
+              nombre: item.nombre,
+              valor: valorItem,
+              valorOriginal: item.valor,
+              cuadrante,
+              categoria,
+              color: coloresCuadrante[cuadrante],
+              angulo: anguloItem,
+              id: `${cuadrante}-${categoria}-${item.id}`,
+              indicadorId: item.id,
+              presente: indicadoresActuales[item.id],
+            });
+          });
+        }
+      );
+    });
+
+    return { elementos, promediosCategoria: promediosCategoriaData, promediosCategoriaIdeal: promediosCategoriaIdealData };
+  }, [
+    cuadranteSeleccionado,
+    modoVisualizacion,
+    indicadoresActuales,
+    promediosPorCategoria,
+    dataPorCuadrante
+  ]);
 
   return (
     <div
@@ -430,7 +582,13 @@ export default function App() {
         >
           Modelo de Estrategias de Viabilidad para Espacios Públicos
         </h1>
-        <p style={{ fontSize: "16px", color: "#64748b", margin: "0" }}>
+        <p
+          style={{
+            fontSize: "16px",
+            color: "#64748b",
+            margin: "0",
+          }}
+        >
           Priorización Estratégica - Diagnóstico
         </p>
       </div>
@@ -441,13 +599,13 @@ export default function App() {
           gap: "20px",
           marginBottom: "30px",
           justifyContent: "center",
-          maxWidth: "940px",
+          maxWidth: "1400px",
           margin: "0 auto 30px auto",
         }}
       >
         <div
           style={{
-            width: "480px",
+            width: "600px",
             backgroundColor: "white",
             borderRadius: "12px",
             padding: "20px",
@@ -459,9 +617,10 @@ export default function App() {
           <h3
             style={{ margin: "0 0 20px 0", color: "#1e293b", fontSize: "18px" }}
           >
-            Selecciona las categorías presentes en tu espacio
+            Selecciona los indicadores presentes
           </h3>
-          {Object.entries(dataPorCuadrante).map(([cuadrante, items]) => (
+
+          {Object.entries(dataPorCuadrante).map(([cuadrante, categorias]) => (
             <div key={cuadrante} style={{ marginBottom: "20px" }}>
               <h4
                 style={{
@@ -469,45 +628,67 @@ export default function App() {
                   fontSize: "16px",
                   fontWeight: "600",
                   margin: "0 0 10px 0",
+                  borderBottom: `2px solid ${coloresCuadrante[cuadrante]}`,
+                  paddingBottom: "5px",
                 }}
               >
                 {cuadrante}
               </h4>
-              {items.map((item) => (
-                <label
-                  key={item.id}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "8px",
-                    marginBottom: "4px",
-                    borderRadius: "6px",
-                    cursor: "pointer",
-                    backgroundColor: indicadoresActuales[item.id]
-                      ? "#f0f9ff"
-                      : "transparent",
-                    border: indicadoresActuales[item.id]
-                      ? "1px solid #e0f2fe"
-                      : "1px solid transparent",
-                  }}
+
+              {Object.entries(categorias).map(([categoria, items]) => (
+                <div
+                  key={categoria}
+                  style={{ marginBottom: "10px", marginLeft: "10px" }}
                 >
-                  <input
-                    type="checkbox"
-                    checked={indicadoresActuales[item.id]}
-                    onChange={() => toggleIndicador(item.id)}
+                  <h5
                     style={{
-                      marginRight: "10px",
-                      accentColor: coloresCuadrante[cuadrante],
+                      color: "#374151",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      margin: "0 0 5px 0",
                     }}
-                  />
-                  <span style={{ fontSize: "14px", color: "#374151" }}>
-                    {item.nombre}
-                    <span style={{ color: "#9ca3af", fontSize: "12px" }}>
-                      {" "}
-                      (valor: {item.valor})
-                    </span>
-                  </span>
-                </label>
+                  >
+                    {categoria}
+                  </h5>
+
+                  {items.map((item) => (
+                    <label
+                      key={item.id}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        padding: "3px 8px",
+                        marginBottom: "2px",
+                        marginLeft: "8px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        backgroundColor: indicadoresActuales[item.id]
+                          ? "#f0f9ff"
+                          : "transparent",
+                        border: indicadoresActuales[item.id]
+                          ? "1px solid #e0f2fe"
+                          : "1px solid transparent",
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={indicadoresActuales[item.id]}
+                        onChange={() => toggleIndicador(item.id)}
+                        style={{
+                          marginRight: "6px",
+                          accentColor: coloresCuadrante[cuadrante],
+                        }}
+                      />
+                      <span style={{ fontSize: "11px", color: "#374151" }}>
+                        {item.nombre}
+                        <span style={{ color: "#9ca3af", fontSize: "10px" }}>
+                          {" "}
+                          ({item.valor})
+                        </span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
               ))}
             </div>
           ))}
@@ -515,7 +696,7 @@ export default function App() {
 
         <div
           style={{
-            width: "480px",
+            width: "600px",
             backgroundColor: "white",
             borderRadius: "12px",
             padding: "20px",
@@ -527,13 +708,14 @@ export default function App() {
           >
             Diagnóstico del Espacio
           </h3>
+
           <div
             style={{
               textAlign: "center",
               padding: "15px",
               backgroundColor: "#f8fafc",
               borderRadius: "8px",
-              marginBottom: "15px",
+              marginBottom: "20px",
             }}
           >
             <div
@@ -547,10 +729,11 @@ export default function App() {
             <div
               style={{ fontSize: "11px", color: "#9ca3af", marginTop: "2px" }}
             >
-              {estadisticas.presentes} de {estadisticas.total} categorías
+              {estadisticas.presentes} de {estadisticas.total} indicadores
             </div>
           </div>
-          <div style={{ marginBottom: "15px" }}>
+
+          <div style={{ marginBottom: "20px" }}>
             <h4
               style={{
                 fontSize: "14px",
@@ -568,18 +751,18 @@ export default function App() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
-                    padding: "10px 0",
+                    padding: "8px 0",
                     borderBottom: "1px solid #f1f5f9",
                   }}
                 >
                   <span
                     style={{
-                      fontSize: "14px",
+                      fontSize: "13px",
                       color: "#64748b",
                       fontWeight: "500",
                     }}
                   >
-                    {cuadrante}
+                    {cuadrante} ({stats.total})
                   </span>
                   <div
                     style={{
@@ -607,7 +790,7 @@ export default function App() {
                     </div>
                     <span
                       style={{
-                        fontSize: "16px",
+                        fontSize: "14px",
                         color: "#374151",
                         fontWeight: "600",
                         minWidth: "35px",
@@ -620,220 +803,60 @@ export default function App() {
               )
             )}
           </div>
-          <div>
+
+          {/* Indicadores faltantes */}
+          <div style={{ marginTop: "20px" }}>
             <h4
               style={{
                 fontSize: "14px",
                 color: "#374151",
-                marginBottom: "15px",
+                marginBottom: "12px",
               }}
             >
-              Categorías faltantes para la viabilidad del espacio público:
+              Indicadores faltantes para la viabilidad del espacio público:
             </h4>
-            {estadisticas.presentes === 0 ? (
-              <div
-                style={{
-                  fontSize: "12px",
-                  color: "#64748b",
-                  fontStyle: "italic",
-                  textAlign: "center",
-                  padding: "20px",
-                  backgroundColor: "#f8fafc",
-                  borderRadius: "8px",
-                }}
-              >
-                Selecciona las categorías presentes en tu espacio para ver las
-                recomendaciones
-              </div>
-            ) : estadisticas.porcentaje === 100 ? (
-              <div
-                style={{
-                  fontSize: "12px",
-                  color: "#059669",
-                  fontWeight: "500",
-                  textAlign: "center",
-                  padding: "20px",
-                  backgroundColor: "#f0fdf4",
-                  borderRadius: "8px",
-                }}
-              >
-                ¡Excelente! Tu espacio cuenta con todas las categorías de
-                viabilidad.
-              </div>
-            ) : (
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-              >
-                {categorizarFaltantes.esenciales.length > 0 && (
-                  <div
+
+            {Object.entries(indicadoresFaltantes).map(([cuadrante, items]) => {
+              if (items.length === 0) return null;
+
+              const categoriasAgrupadas = items.reduce((acc, item) => {
+                if (!acc[item.categoria]) acc[item.categoria] = [];
+                acc[item.categoria].push(item.nombre);
+                return acc;
+              }, {});
+
+              return (
+                <div key={cuadrante} style={{ marginBottom: "8px" }}>
+                  <span
                     style={{
-                      backgroundColor: "white",
-                      border: "2px solid #dc2626",
-                      padding: "12px 16px",
-                      borderRadius: "8px",
-                      fontSize: "12px",
+                      color: coloresCuadrante[cuadrante],
                       fontWeight: "600",
-                      width: "100%",
-                      boxSizing: "border-box",
+                      fontSize: "12px",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginBottom: "6px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: "700",
-                          color: "#dc2626",
-                        }}
-                      >
-                        Esenciales
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "800",
-                          color: "#dc2626",
-                        }}
-                      >
-                        3.0
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        lineHeight: "1.2",
-                        wordWrap: "break-word",
-                        overflow: "hidden",
-                        color: "#374151",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {categorizarFaltantes.esenciales
-                        .map((item) => item.nombre)
-                        .join(", ")}
-                    </div>
-                  </div>
-                )}
-                {categorizarFaltantes.importantes.length > 0 && (
-                  <div
+                    {cuadrante}:
+                  </span>
+                  <span
                     style={{
-                      backgroundColor: "white",
-                      border: "2px solid #f59e0b",
-                      padding: "12px 16px",
-                      borderRadius: "8px",
-                      fontSize: "12px",
-                      fontWeight: "600",
-                      width: "100%",
-                      boxSizing: "border-box",
+                      fontSize: "11px",
+                      color: "#64748b",
+                      marginLeft: "6px",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginBottom: "6px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: "700",
-                          color: "#f59e0b",
-                        }}
-                      >
-                        Importantes
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "800",
-                          color: "#f59e0b",
-                        }}
-                      >
-                        2.0-2.9
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        lineHeight: "1.2",
-                        wordWrap: "break-word",
-                        overflow: "hidden",
-                        color: "#374151",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {categorizarFaltantes.importantes
-                        .map((item) => item.nombre)
-                        .join(", ")}
-                    </div>
-                  </div>
-                )}
-                {categorizarFaltantes.complementarios.length > 0 && (
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      border: "2px solid #6b7280",
-                      padding: "12px 16px",
-                      borderRadius: "8px",
-                      fontSize: "12px",
-                      fontWeight: "600",
-                      width: "100%",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginBottom: "6px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "13px",
-                          fontWeight: "700",
-                          color: "#6b7280",
-                        }}
-                      >
-                        Complementarios
-                      </span>
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "800",
-                          color: "#6b7280",
-                        }}
-                      >
-                        1.0-1.9
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        lineHeight: "1.2",
-                        wordWrap: "break-word",
-                        overflow: "hidden",
-                        color: "#374151",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {categorizarFaltantes.complementarios
-                        .map((item) => item.nombre)
-                        .join(", ")}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+                    {Object.entries(categoriasAgrupadas)
+                      .map(([categoria, nombres]) => {
+                        let displayNombres = nombres.slice(0,3).join(", ");
+                        if (nombres.length > 3) {
+                            displayNombres += ` ... +${nombres.length - 3} más`;
+                        }
+                        return `${categoria} (${displayNombres})`;
+                       }
+                      )
+                      .join("; ")}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -854,41 +877,50 @@ export default function App() {
             color: "#64748b",
             border: "1px solid #cbd5e1",
             borderRadius: "20px",
-            padding: "8px 16px",
+            padding: "6px 12px",
             cursor: "pointer",
             fontWeight: "500",
-            fontSize: "14px",
+            fontSize: "12px",
             transition: "background-color 0.3s ease",
             outline: "none",
           }}
           onClick={() => setCuadranteSeleccionado("todos")}
         >
-          Todas las etapas
+          Todos los etapas
         </button>
-        {Object.keys(coloresCuadrante).map((cuadrante) => (
-          <button
-            key={cuadrante}
-            style={{
-              backgroundColor:
-                cuadranteSeleccionado === cuadrante
-                  ? coloresCuadrante[cuadrante]
-                  : "white",
-              color: cuadranteSeleccionado === cuadrante ? "white" : "#64748b",
-              border: "1px solid #cbd5e1",
-              borderRadius: "20px",
-              padding: "8px 16px",
-              cursor: "pointer",
-              fontWeight: "500",
-              fontSize: "14px",
-              transition: "background-color 0.3s ease",
-              outline: "none",
-            }}
-            onClick={() => setCuadranteSeleccionado(cuadrante)}
-          >
-            {cuadrante}
-          </button>
-        ))}
+
+        {Object.entries(coloresCuadrante).map(([cuadrante, color]) => {
+          return (
+            <button
+              key={cuadrante}
+              style={{
+                backgroundColor:
+                  cuadranteSeleccionado === cuadrante ? color : "white",
+                color:
+                  cuadranteSeleccionado === cuadrante ? "white" : "#64748b",
+                border: `2px solid ${color}`,
+                borderRadius: "12px",
+                padding: "8px 16px",
+                cursor: "pointer",
+                fontWeight: "500",
+                fontSize: "12px",
+                transition: "all 0.3s ease",
+                outline: "none",
+                position: "relative",
+                minWidth: "120px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              onClick={() => setCuadranteSeleccionado(cuadrante)}
+            >
+              <span>{cuadrante}</span>
+            </button>
+          );
+        })}
+
         <div style={{ width: "20px" }} />
+
         <button
           style={{
             backgroundColor:
@@ -896,17 +928,18 @@ export default function App() {
             color: modoVisualizacion === "actual" ? "white" : "#64748b",
             border: "1px solid #cbd5e1",
             borderRadius: "20px",
-            padding: "8px 16px",
+            padding: "6px 12px",
             cursor: "pointer",
             fontWeight: "500",
-            fontSize: "14px",
+            fontSize: "12px",
             transition: "background-color 0.3s ease",
             outline: "none",
           }}
           onClick={() => setModoVisualizacion("actual")}
         >
-          📊 Diagnóstico Actual
+          📊 Diagnóstico
         </button>
+
         <button
           style={{
             backgroundColor:
@@ -914,16 +947,16 @@ export default function App() {
             color: modoVisualizacion === "ideal" ? "white" : "#64748b",
             border: "1px solid #cbd5e1",
             borderRadius: "20px",
-            padding: "8px 16px",
+            padding: "6px 12px",
             cursor: "pointer",
             fontWeight: "500",
-            fontSize: "14px",
+            fontSize: "12px",
             transition: "background-color 0.3s ease",
             outline: "none",
           }}
           onClick={() => setModoVisualizacion("ideal")}
         >
-          🎯 Modelo Ideal
+          🎯 Ideal
         </button>
       </div>
 
@@ -937,15 +970,14 @@ export default function App() {
         <div
           style={{
             backgroundColor: "white",
-            borderRadius: "16px",
+            borderRadius: "12px",
             padding: "20px",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-            border: "1px solid #e2e8f0",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
           }}
         >
           <svg
-            width="900"
-            height="900"
+            width="1300"
+            height="1300"
             style={{ display: "block" }}
             onMouseLeave={() => setPuntoHover(null)}
           >
@@ -960,8 +992,8 @@ export default function App() {
                 <feDropShadow
                   dx="0"
                   dy="2"
-                  stdDeviation="4"
-                  floodColor="rgba(0,0,0,0.2)"
+                  stdDeviation="3"
+                  floodColor="rgba(0,0,0,0.15)"
                 />
               </filter>
               <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
@@ -970,155 +1002,89 @@ export default function App() {
               </radialGradient>
             </defs>
 
-            <circle cx="450" cy="450" r="430" fill="url(#centerGradient)" />
+            <circle cx="650" cy="650" r="480" fill="url(#centerGradient)" />
 
-            {[113, 226, 340].map((radio, index) => (
+            {[116, 233, 350].map((radio, index) => (
               <g key={index}>
                 <circle
-                  cx="450"
-                  cy="450"
+                  cx="650"
+                  cy="650"
                   r={radio}
                   stroke="#e2e8f0"
                   strokeWidth="1"
                   fill="none"
                 />
                 <text
-                  x="470"
-                  y={450 - radio + 5}
+                  x="660"
+                  y={650 - radio + 5}
                   fill="#94a3b8"
-                  fontSize="11"
+                  fontSize="12"
                   fontWeight="500"
                 >
-                  {((radio / 340) * 3).toFixed(1)}
+                  {index + 1}
                 </text>
               </g>
             ))}
 
-            {lineasMostrar.map((linea, index) => {
-              const lineasTexto = dividirTexto(linea.nombre, 16);
-              const esLadoDerecho = linea.x2 > 450;
-              const offsetX = esLadoDerecho ? 18 : -18;
-              return (
-                <g key={index}>
-                  <line
-                    x1={linea.x1}
-                    y1={linea.y1}
-                    x2={linea.x2}
-                    y2={linea.y2}
-                    stroke="#cbd5e1"
-                    strokeWidth="1"
-                    opacity="0.4"
-                  />
-                  {lineasTexto.map((lineaTexto, lineaIndex) => (
-                    <text
-                      key={lineaIndex}
-                      x={linea.x2 + offsetX}
-                      y={
-                        linea.y2 +
-                        (lineaIndex - (lineasTexto.length - 1) / 2) * 12
-                      }
-                      textAnchor={esLadoDerecho ? "start" : "end"}
-                      fill="#475569"
-                      fontSize="11"
-                      fontWeight="500"
-                      dominantBaseline="central"
-                    >
-                      {lineaTexto}
-                    </text>
-                  ))}
-                </g>
-              );
-            })}
-
-            {mostrarEspiral && (
-              <path
-                d={`M ${espiralReferencia[0].x} ${
-                  espiralReferencia[0].y
-                } ${espiralReferencia
-                  .slice(1)
-                  .map((p) => `L ${p.x} ${p.y}`)
-                  .join(" ")}`}
-                stroke="#94a3b8"
-                strokeWidth="2"
-                fill="none"
-                opacity="0.3"
-                strokeDasharray="5,5"
-              />
-            )}
-
             <line
-              x1="90"
-              y1="450"
-              x2="810"
-              y2="450"
+              x1="100"
+              y1="650"
+              x2="1200"
+              y2="650"
               stroke="#cbd5e1"
               strokeWidth="2"
-              strokeDasharray="10,5"
+              strokeDasharray="8,4"
             />
             <line
-              x1="450"
-              y1="90"
-              x2="450"
-              y2="810"
+              x1="650"
+              y1="100"
+              x2="650"
+              y2="1200"
               stroke="#cbd5e1"
               strokeWidth="2"
-              strokeDasharray="10,5"
+              strokeDasharray="8,4"
             />
 
-            {Object.entries(poligonosConCentro).map(
-              ([cuadrante, triangulos]) => (
-                <g key={`centro-${cuadrante}`}>
-                  {Array.isArray(triangulos) ? (
-                    triangulos.map((triangulo, index) => (
-                      <polygon
-                        key={`${cuadrante}-triangulo-${index}`}
-                        points={triangulo}
-                        fill={coloresCuadrante[cuadrante]}
-                        opacity="0.15"
-                        stroke="none"
-                      />
-                    ))
-                  ) : (
-                    <polygon
-                      points={triangulos}
-                      fill={coloresCuadrante[cuadrante]}
-                      opacity="0.15"
-                      stroke="none"
-                    />
-                  )}
-                </g>
-              )
-            )}
-
-            {cuadranteSeleccionado !== "todos" && poligonoMostrar && (
-              <polygon
-                points={poligonoMostrar}
-                fill={coloresCuadrante[cuadranteSeleccionado]}
-                opacity="0.2"
-                stroke={coloresCuadrante[cuadranteSeleccionado]}
-                strokeWidth="2"
-              />
-            )}
-
+            {/* Etiquetas de cuadrantes en las extensiones de los ejes */}
             {[
-              { nombre: "Rehabilitación", x: 60, y: 60 },
-              { nombre: "Diseño", x: 750, y: 60 },
-              { nombre: "Gestión", x: 60, y: 814 },
-              { nombre: "Construcción", x: 750, y: 814 },
-            ].map(({ nombre, x, y }) => (
+              {
+                nombre: "Rehabilitación",
+                x: 200,
+                y: 200,
+                color: coloresCuadrante.Rehabilitación,
+              },
+              {
+                nombre: "Diseño",
+                x: 1100,
+                y: 200,
+                color: coloresCuadrante.Diseño,
+              },
+              {
+                nombre: "Gestión",
+                x: 200,
+                y: 1100,
+                color: coloresCuadrante.Gestión,
+              },
+              {
+                nombre: "Construcción",
+                x: 1100,
+                y: 1100,
+                color: coloresCuadrante.Construcción,
+              },
+            ].map(({ nombre, x, y, color }) => (
               <g key={nombre}>
                 <rect
-                  x={x}
-                  y={y}
+                  x={x - 45}
+                  y={y - 11}
                   width="90"
-                  height="26"
-                  rx="13"
-                  fill={coloresCuadrante[nombre]}
+                  height="22"
+                  rx="11"
+                  fill={color}
                   opacity="0.9"
                 />
                 <text
-                  x={x + 45}
-                  y={y + 16}
+                  x={x}
+                  y={y + 3}
                   textAnchor="middle"
                   fill="white"
                   fontSize="12"
@@ -1129,87 +1095,252 @@ export default function App() {
               </g>
             ))}
 
-            {puntosMostrar.map((punto, index) => {
-              const tamaño = 5 + punto.valor * 3;
-              const isHovered = puntoHover === punto.id;
-              return (
-                <g key={index}>
+            {/* Líneas radiales más marcadas */}
+            {elementos.elementos.map((elemento, index) => (
+              <line
+                key={`line-${index}`}
+                x1="650"
+                y1="650"
+                x2={
+                  650 + Math.cos(((elemento.angulo - 90) * Math.PI) / 180) * 450
+                }
+                y2={
+                  650 + Math.sin(((elemento.angulo - 90) * Math.PI) / 180) * 450
+                }
+                stroke="#cbd5e1"
+                strokeWidth="1"
+                opacity="0.6"
+              />
+            ))}
+
+            {/* Línea espiral de referencia */}
+            <path
+              d={(() => {
+                let path = "";
+                const numPuntos = 360;
+                const radioEspiral = 350;
+                for (let i = 0; i <= numPuntos; i++) {
+                  const angulo = (i * 4 * Math.PI) / numPuntos;
+                  const radio = (radioEspiral * i) / numPuntos;
+                  const x = 650 + Math.cos(angulo) * radio;
+                  const y = 650 + Math.sin(angulo) * radio;
+                  if (i === 0) {
+                    path += `M ${x} ${y}`;
+                  } else {
+                    path += ` L ${x} ${y}`;
+                  }
+                }
+                return path;
+              })()}
+              stroke="#94a3b8"
+              strokeWidth="1.5"
+              fill="none"
+              opacity="0.4"
+              strokeDasharray="3,3"
+            />
+
+            {/* Línea ideal de referencia (solo en modo diagnóstico) */}
+            {modoVisualizacion === "actual" && (
+              <path
+                d={(() => {
+                  if (elementos.promediosCategoriaIdeal.length === 0) return "";
+                  let path = `M ${elementos.promediosCategoriaIdeal[0].x} ${elementos.promediosCategoriaIdeal[0].y}`;
+                  for (
+                    let i = 1;
+                    i < elementos.promediosCategoriaIdeal.length;
+                    i++
+                  ) {
+                    path += ` L ${elementos.promediosCategoriaIdeal[i].x} ${elementos.promediosCategoriaIdeal[i].y}`;
+                  }
+                  path += ` Z`;
+                  return path;
+                })()}
+                stroke="#9ca3af"
+                strokeWidth="2"
+                fill="rgba(156, 163, 175, 0.05)"
+                opacity="0.8"
+                strokeDasharray="5,5"
+              />
+            )}
+
+            {/* Líneas conectando promedios de categorías actuales */}
+            <path
+              d={(() => {
+                if (elementos.promediosCategoria.length === 0) return "";
+                let path = `M ${elementos.promediosCategoria[0].x} ${elementos.promediosCategoria[0].y}`;
+                for (let i = 1; i < elementos.promediosCategoria.length; i++) {
+                  path += ` L ${elementos.promediosCategoria[i].x} ${elementos.promediosCategoria[i].y}`;
+                }
+                path += ` Z`;
+                return path;
+              })()}
+              stroke="#374151"
+              strokeWidth="2"
+              fill="rgba(156, 163, 175, 0.1)"
+              opacity="0.8"
+            />
+
+            {/* Puntos de promedio ideales de referencia (solo en modo diagnóstico) */}
+            {modoVisualizacion === "actual" &&
+              elementos.promediosCategoriaIdeal.map((promedio, index) => (
+                <g key={`promedio-ideal-${index}`}>
                   <circle
-                    cx={punto.x}
-                    cy={punto.y}
-                    r={tamaño}
-                    fill={
-                      punto.presente && modoVisualizacion === "actual"
-                        ? punto.color
-                        : modoVisualizacion === "actual"
-                        ? "#e2e8f0"
-                        : punto.color
-                    }
+                    cx={promedio.x}
+                    cy={promedio.y}
+                    r="8"
+                    fill="#9ca3af"
                     stroke="white"
                     strokeWidth="2"
+                    opacity="0.7"
+                  />
+                  <text
+                    x={promedio.x}
+                    y={promedio.y}
+                    textAnchor="middle"
+                    fill="white"
+                    fontSize="8"
+                    fontWeight="600"
+                    dominantBaseline="central"
+                  >
+                    {promedio.promedio.toFixed(1)}
+                  </text>
+                </g>
+              ))}
+
+            {/* Puntos de promedio de categorías actuales */}
+            {elementos.promediosCategoria.map((promedio, index) => (
+              <g key={`promedio-${index}`}>
+                <circle
+                  cx={promedio.x}
+                  cy={promedio.y}
+                  r="12"
+                  fill={coloresCuadranteIntensos[promedio.cuadrante]}
+                  stroke="white"
+                  strokeWidth="3"
+                  opacity="1"
+                  filter="url(#dropShadow)"
+                />
+                <text
+                  x={promedio.x}
+                  y={promedio.y}
+                  textAnchor="middle"
+                  fill="white"
+                  fontSize="10"
+                  fontWeight="700"
+                  dominantBaseline="central"
+                >
+                  {promedio.promedio.toFixed(1)}
+                </text>
+              </g>
+            ))}
+
+            {elementos.elementos.map((elemento, index) => {
+              const anguloTexto = elemento.angulo - 90;
+              const anguloNormalizado = ((anguloTexto % 360) + 360) % 360;
+              const esTextoInvertido =
+                anguloNormalizado > 90 && anguloNormalizado < 270;
+              const anguloFinal = esTextoInvertido
+                ? anguloTexto + 180
+                : anguloTexto;
+
+              return (
+                <text
+                  key={`texto-${index}`}
+                  x={elemento.xTexto}
+                  y={elemento.yTexto}
+                  textAnchor="middle"
+                  fill="#374151"
+                  fontSize="10"
+                  fontWeight="500"
+                  dominantBaseline="central"
+                  transform={`rotate(${anguloFinal}, ${elemento.xTexto}, ${elemento.yTexto})`}
+                >
+                  {elemento.nombre}
+                </text>
+              );
+            })}
+
+            {elementos.elementos.map((elemento, index) => {
+              const tamaño = 3 + elemento.valorOriginal * 1.5;
+              const isHovered = puntoHover === elemento.id;
+
+              return (
+                <g key={`punto-${index}`}>
+                  <circle
+                    cx={elemento.x}
+                    cy={elemento.y}
+                    r={tamaño}
+                    fill={
+                      modoVisualizacion === "actual"
+                        ? elemento.presente
+                          ? elemento.color
+                          : "#e2e8f0"
+                        : elemento.color
+                    }
+                    stroke="white"
+                    strokeWidth="1.5"
                     opacity={
-                      punto.presente && modoVisualizacion === "actual"
-                        ? "0.9"
-                        : modoVisualizacion === "actual"
-                        ? "0.3"
+                      modoVisualizacion === "actual"
+                        ? elemento.presente
+                          ? "0.9"
+                          : "0.3"
                         : "0.9"
                     }
                     filter="url(#dropShadow)"
-                    style={{ cursor: "pointer", transition: "all 0.2s ease" }}
-                    onMouseEnter={() => setPuntoHover(punto.id)}
+                    style={{
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                    onMouseEnter={() => setPuntoHover(elemento.id)}
                     transform={isHovered ? `scale(1.3)` : "scale(1)"}
-                    transformOrigin={`${punto.x} ${punto.y}`}
+                    transformOrigin={`${elemento.x} ${elemento.y}`}
                   />
-                  <text
-                    x={punto.x}
-                    y={punto.y + 3}
-                    textAnchor="middle"
-                    fill="white"
-                    fontSize="9"
-                    fontWeight="700"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    {modoVisualizacion === "actual"
-                      ? punto.presente
-                        ? punto.valorOriginal
-                        : "0"
-                      : punto.valorOriginal}
-                  </text>
+
                   {isHovered && (
                     <g>
                       <rect
-                        x={punto.x - 70}
-                        y={punto.y - tamaño - 50}
-                        width="140"
-                        height="40"
-                        rx="8"
+                        x={elemento.x - 90}
+                        y={elemento.y - tamaño - 50}
+                        width="180"
+                        height="45"
+                        rx="6"
                         fill="#1e293b"
                         opacity="0.95"
                         filter="url(#dropShadow)"
                       />
+
                       <text
-                        x={punto.x}
-                        y={punto.y - tamaño - 32}
+                        x={elemento.x}
+                        y={elemento.y - tamaño - 30}
                         textAnchor="middle"
                         fill="white"
                         fontSize="11"
                         fontWeight="600"
                       >
-                        {punto.nombre}
+                        {elemento.nombre}
                       </text>
+
                       <text
-                        x={punto.x}
-                        y={punto.y - tamaño - 18}
+                        x={elemento.x}
+                        y={elemento.y - tamaño - 18}
                         textAnchor="middle"
                         fill="#cbd5e1"
                         fontSize="9"
                       >
-                        {punto.cuadrante} •{" "}
-                        {modoVisualizacion === "actual"
-                          ? punto.presente
-                            ? ` Presente (${punto.valorOriginal})`
-                            : " No presente"
-                          : ` Valor ideal: ${punto.valorOriginal}`}
+                        {elemento.cuadrante} • {elemento.categoria}
+                      </text>
+
+                      <text
+                        x={elemento.x}
+                        y={elemento.y - tamaño - 8}
+                        textAnchor="middle"
+                        fill="#a3e635"
+                        fontSize="10"
+                        fontWeight="600"
+                      >
+                        Valor: {elemento.valorOriginal}
+                        {modoVisualizacion === "actual" &&
+                          ` | ${elemento.presente ? "Presente" : "Ausente"}`}
                       </text>
                     </g>
                   )}
@@ -1220,27 +1351,33 @@ export default function App() {
         </div>
       </div>
 
+      {/* Interpretación de valores */}
       <div
         style={{
+          textAlign: "center",
+          padding: "15px",
           backgroundColor: "white",
           borderRadius: "12px",
-          padding: "25px",
           boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-          textAlign: "center",
+          marginTop: "20px",
         }}
       >
         <p
           style={{
-            fontSize: "16px",
-            color: "#475569",
             margin: "0",
+            fontSize: "14px",
+            color: "#374151",
             fontWeight: "500",
           }}
         >
-          <strong>
-            Interpretación de valores: 3 = Esencial | 2 = Importante | 1 =
-            Complementario
-          </strong>
+          <strong>Interpretación de valores:</strong> 3 = Esencial | 2 =
+          Importante | 1 = Complementario
+          {modoVisualizacion === "actual" && (
+            <span style={{ color: "#9ca3af", marginLeft: "20px" }}>
+              <strong>Línea gris punteada:</strong> Referencia ideal para
+              comparación
+            </span>
+          )}
         </p>
       </div>
     </div>
