@@ -1,25 +1,29 @@
 {
-  "name": "react",
+  "name": "react-app",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production"
+  },
   "keywords": [],
-  "main": "src/index.tsx",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/react": "19.0.0",
-    "@types/react-dom": "19.0.0",
-    "loader-utils": "3.2.1",
-    "typescript": "5.7.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "html-webpack-plugin": "^5.3.2"
+  }
 }
